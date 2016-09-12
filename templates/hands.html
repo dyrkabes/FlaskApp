@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import render_hand %}
+
+{% block content %}
+    <a href="{{ url_for('post_hand') }}">Post another hand</a>
+
+    {% for hand in stream %}
+        {{ render_hand(hand) }}
+    {% endfor %}
+{% endblock %}

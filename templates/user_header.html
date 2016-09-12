@@ -1,0 +1,13 @@
+<table class="user_profile_title">
+    <tr>
+        <td><img src="{{ user.avatar(150) }}"></td>
+        <td><h1>User: {{ user.username }}</h1></td>
+    </tr>
+
+
+</table>
+<div class="last_seen">
+    {% if user.last_seen %}
+        Last seen on: {{ user.last_seen.strftime("%d-%m-%Y %H:%M") }}
+    {% endif %}
+</div>

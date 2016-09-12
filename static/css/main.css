@@ -1,0 +1,243 @@
+/***************************************
+                GENERAL
+***************************************/
+a {
+    text-decoration: none;
+}
+
+
+
+/***************************************
+                HEADER
+***************************************/
+#title {
+    background-color: #AAA;
+    border-bottom: 5px solid #222222;
+}
+
+#title h1 {
+    float: right;
+    text-align:right;
+    padding-right: 5%;
+    margin: 0;
+}
+
+#title h2 {
+    padding-left: 5%;
+}
+
+header nav {
+    background-color: #CCC;
+    border-bottom: 3px solid #555;
+}
+
+header nav ul {
+    list-style: none;
+    max-width: 940px;
+    margin: 0px auto 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+
+}
+
+header a {
+    color: #555;
+    font-weight: 700;
+    font-size: 1.2em;
+
+}
+
+/***************************************
+                USER_HEADER
+***************************************/
+.user_header {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user_header li {
+    display: inline-block;
+
+}
+
+.about_me {
+    float: right;
+}
+
+.about_me p, .about_me h4 {
+    padding: 0 10px;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/***************************************
+                FLASHED
+***************************************/
+#flash_zone {
+    background-color: #5A5;
+    margin: 0 auto;
+}
+
+#flash_zone ul {
+    list-style: none;
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#flash_zone ul li {
+    margin: 0 30%;
+    text-align: center;
+}
+
+.flash_success {
+    background-color: #5A5;
+}
+
+.flash_failure {
+    background-color: #A55;
+}
+
+
+
+/***************************************
+                CONTENT
+***************************************/
+#content {
+    display: block;
+    width: 100%;
+    max-width: 940px;
+    background-color: #EEE;
+    margin: 0 auto;
+
+}
+
+.post {
+    border-bottom: 3px solid #666;
+}
+
+.hand {
+    border-bottom: 3px solid #666;
+}
+
+.hand_content {
+    padding: 0 10px;
+    margin: 0 5px;
+    border-bottom: 1px solid #AAA;
+}
+
+.hand {
+    padding: 5px 10px;
+    border-bottom: 2px solid #888;
+}
+
+.time_and_edit {
+    margin: 0;
+    padding: 0;
+}
+
+.time_and_edit ul {
+    padding: 0px 0px;
+    margin: 0 0 0 0;
+}
+
+.time_and_edit li {
+    list-style: none;
+}
+
+.timestamp {
+    margin: 5px 0 0 0;
+}
+
+.timestamp {
+    padding: 0px 10px;
+    margin: 0 0 0 0;
+    display: inline-block;
+    float: right;
+
+}
+/*
+.edit_button {
+    display: inline-block;
+    margin-right: 10px;
+}*/
+
+.post_content {
+    padding: 0px 10px;
+    margin: 0 0 5px 0;
+    display: inline-block;
+}
+
+.
+
+/***************************************
+                FORMS
+***************************************/
+
+.validation_error {
+    color: #A35;
+}
+
+.block {
+    display: block;
+}
+
+/***************************************
+                GRIDS
+***************************************/
+
+.grid-25{
+  display: inline-block;
+  float: center;
+  width: 20%;
+  margin: 0 2.25%;
+}
+
+.grid-40 {
+  display: inline-block;
+  width: 40%;
+}
+
+.grid-45 {
+  display: inline-block;
+  width: 40%;
+}
+
+.grid-50 {
+  display: inline-block;
+  width: 48%;
+/*  margin: 1%;*/
+}
+
+.grid-20 {
+  display: inline-block;
+  float: center;
+  width: 15%;
+  margin: 0 2%;
+  text-align: center;
+}
+
+.bg-white {
+      background-color: white;
+}
+
+.user_profile_title {
+    border-bottom: 3px solid #444;
+    margin-bottom: 20px;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.username {
+    margin-top: 5%;
+    padding: 0;
+    vertical-align: top;
+}

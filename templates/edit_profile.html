@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% from "macros.html" import render_post, render_field %}
+
+{% block content %}
+<ul class="user_header">
+    <li class="grid-50">
+        {% include 'user_header.html' %}
+    </li>
+    <li class="grid-50 about_me">
+    <!--- testing part --->
+    <h4>About me:</h4>
+        <form action="" method="post" name="edit_profile">
+            {% for field in form %}
+                <div class="block"> {{ render_field(field) }} </div>
+            {% endfor %}
+            <input type="submit" value="Apply">
+
+        </form>
+    </li>
+
+</ul>
+
+
+{% for post in stream %}
+    {{ render_post(post) }}
+    <br>
+{% endfor %}
+
+{% endblock %}

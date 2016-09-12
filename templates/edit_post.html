@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% from 'macros.html' import render_field %}
+
+{% block content %}
+{{ form.hidden_tag() }}
+{% include 'user_header.html' %}
+
+<form action="" method="post" name="post">
+    {% for field in form %}
+        <div>
+            <div class="block"> {{ render_field(field) }}</div>
+        </div>
+    {% endfor %}
+    <button type="submit" value="Submit">SUBMIT</button>
+</form>
+
+
+{% endblock %}

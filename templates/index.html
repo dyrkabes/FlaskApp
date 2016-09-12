@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% from 'macros.html' import render_post %}
+
+{% block content %}
+<h1>Hello <a href="{{ url_for('user', username=user.username)}}" class="username"> {{ user.username }}<br></a></h1>
+{% if user.is_authenticated %}
+    <h3><a href="{{ url_for('post') }}">Write a beautiful post!</a></h3>
+{% endif %}
+
+{% for post in stream %}
+    <div class="post">
+        {{ render_post(post) }}
+    </div>
+{% endfor %}
+
+
+<!-- coming next -->
+<a href="#">1</a><a href="#">2</a>
+
+
+{% endblock %}

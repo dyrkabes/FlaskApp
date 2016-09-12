@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<table class="user_profile_title">
+    <tr>
+        <td><img src="{{ user.avatar(150) }}"></td>
+        <td class="username"><h1 class="username">{{ user.username }}</h1></td>
+    </tr>
+</table>
+{{ post.content }}
+
+{% endblock %}

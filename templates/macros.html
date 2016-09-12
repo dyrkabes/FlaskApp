@@ -1,0 +1,100 @@
+{% macro render_field(field) %}
+
+{% for error in field.errors %}
+    <span class="validation_error">{{ error }}</span>
+{% endfor %}
+
+{% if field.id=='about_me' %}
+    {{ field(placeholder=field.label.text, rows=5, cols=50) }}
+{% elif field.label.text=='Post' %}
+
+    {{ field(placeholder=field.label.text, size=200) }}
+{% else %}
+    {{ field(placeholder=field.label.text, size=100) }}
+{% endif %}
+
+{% if field.label.text=="remember_me" %}
+    <label for="remember_me">Rememba?</label>
+{% endif %}
+
+
+{% endmacro %}
+
+{% macro render_post(post) %}
+
+<table>
+    <tr valign="top">
+        <td><img src="{{ post.user.avatar(50) }}"></td>
+        <td><h3><a href="{{ url_for('user', username=post.user.username)}}" class="username"> {{ post.user.username }}</a></h3></td>
+    </tr>
+</table>
+
+<p class="post_content">{{ post.content }}</p>
+
+
+<ul class="time_and_edit">
+        <li class="grid-50">
+            {% if post.user.username==g.user.username %}
+                <a href="{{ url_for('edit_post', post_id=post.id) }}">EDIT</a>
+            {% endif %}
+        </li>
+        <li class="grid-50 text_right">
+            <a class="timestamp" href="{{ url_for('view_post', post_id=post.id) }}">Posted at: {{ post.timestamp.strftime('%d-%m-%Y %H:%M') }}</a>
+        </li>
+
+</ul>
+<!--<a class="timestamp" href="{{ url_for('view_post', post_id=post.id) }}">{{ post.timestamp.strftime('%d-%m-%Y %H:%M') }}</a>-->
+
+{% endmacro %}
+
+
+{% macro render_hand(hand) %}
+<div class="hand">
+    <table>
+        <tr valign="top">
+            <td><img src="{{ hand.user.avatar(50) }}"></td>
+            <td><h3><a href="{{ url_for('user', username=hand.user.username)}}" class="username"> {{ hand.user.username }}</a></h3></td>
+        </tr>
+    </table>
+    <p class="hand_content">{{ hand.content }}</p>
+
+    {% if hand.flop %}
+        <p>Flop: {{ hand.flop }} </p>
+    {% endif %}
+
+    {% if hand.turn %}
+        <p>Turn:: {{ hand.turn }} </p>
+    {% endif %}
+
+    {% if hand.river %}
+        <p>River::: {{ hand.river }} </p>
+    {% endif %}
+
+    {% if hand.summary %}
+        <p>summary: {{ hand.summary }} </p>
+    {% endif %}
+
+
+    <ul class="time_and_edit">
+        <li class="grid-50">
+            {% if hand.user.username==g.user.username %}
+                <a class="edit_button" href="{{ url_for('edit_hand', id=hand.id) }}">Edit hand</a>
+            {% endif %}
+        </li>
+        <li class="grid-50 text_right">
+            <p class="timestamp">Posted at: {{ hand.timestamp.strftime('%d-%m-%Y %H:%M') }}</p>
+        </li>
+
+    </ul>
+
+
+</div>
+
+{% endmacro %}
+
+
+
+{% macro render_cost(cost) %}
+
+
+{% endmacro %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dyrkabes - {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+    <header>
+        <div id="title">
+            <div class="grid-40">
+                <h2>sometext</h2>
+
+            </div>
+
+                <h1>
+                    Dyrkabes
+                </h1>
+        </div>
+
+        <nav>
+            <ul>
+            <li class="grid-20 bg-white">
+                <a href="{{ url_for('index') }}">Blog</a>
+            </li>
+            <li class="grid-20 bg-white">
+                <a href="{{ url_for('gallery') }}">Gallery</a>
+            </li >
+            <li class="grid-20 bg-white">
+                <a href="{{ url_for('hands') }}">Hands</a>
+            </li>
+            <li class="grid-20 bg-white">
+                <a href="{{ url_for('services') }}">Services</a>
+            </li>
+                {% if current_user.is_authenticated %}
+                <li class="grid-20 bg-white">
+                    <a href="{{ url_for('logout') }}">logout</a>
+                </li>
+                {% else %}
+                <li class="grid-20 bg-white">
+                    <a href="{{ url_for('login') }}">login|</a><a href="{{ url_for('register') }}">register</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+
+    </header>
+    <div id="flash_zone">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <ul class="flash">
+                {% for category, message in messages %}
+                    <li class="grid-40 flash_{{ category }}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
